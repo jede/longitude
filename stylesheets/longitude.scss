@@ -1,10 +1,12 @@
+$longitude-gutter-width: 10px !default;
+$longitude-column-width: 60px !default;
 
 @mixin longitude($columns-list) {
   $prev-column-count: 0;
   $max-width: 0;
   @each $column-count in $columns-list {
-    $min-width: $prev-column-count * 80px;
-    $max-width: $column-count * 80px;
+    $min-width: $prev-column-count * ($longitude-gutter-width * 2 + $longitude-column-width);
+    $max-width: $column-count * ($longitude-gutter-width * 2 + $longitude-column-width);;
     $query: '(max-width: #{$max-width})';
     @if $min-width > 0 {
       $query: '(min-width: #{$min-width + 1px}) and #{$query}';
