@@ -1,5 +1,22 @@
 
 @mixin longitude($columns-list) {
-  @content;
+  $prev-column-count: 0;
+  $max-width: 0;
+  @each $column-count in $columns-list {
+    $min-width: $prev-column-count * 80px;
+    $max-width: $column-count * 80px;
+    $query: '(max-width: #{$max-width})';
+    @if $min-width > 0 {
+      $query: '(min-width: #{$min-width + 1px}) and #{$query}';
+    }
+    @media $query {
+      @content;
+    }
+    $prev-column-count: $column-count
+  }
+
+  @media (min-width: ($max-width + 1px)) {
+    @content;
+  }
 }
 
