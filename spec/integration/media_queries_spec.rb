@@ -1,11 +1,4 @@
 require 'spec_helper'
-require 'sass'
-require 'longitude'
-
-def render(template)
-  template = "@import 'longitude'; " + template
-  Sass::Engine.new(template, syntax: :scss).render
-end
 
 describe 'Media queries' do
   describe 'standard column widths' do
