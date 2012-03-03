@@ -36,6 +36,15 @@ $longitude-base-width: 100%;
   @return $gutters * gutter-width() + $columns * column-width();
 }
 
+@function gutter($gutters: 1) {
+  @return gutter-width() * $gutters;
+}
+
+@mixin gutters {
+  margin-left: gutter();
+  margin-right: gutter();
+}
+
 @mixin longitude($columns-list) {
   $prev-column-count: 0;
   $max-width: 0;
