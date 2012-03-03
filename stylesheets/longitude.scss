@@ -1,5 +1,6 @@
 $longitude-gutter-width: 10px !default;
 $longitude-column-width: 60px !default;
+$longitude-compability-mode: false !default;
 
 $longitude-column-count: 0;
 $longitude-base-width: 100%;
@@ -50,21 +51,27 @@ $longitude-base-width: 100%;
   $max-width: 0;
   @each $column-count in $columns-list {
     $longitude-column-count: $column-count;
-    $min-width: absolute-width($prev-column-count);
-    $max-width: absolute-width($column-count);
-    $query: '(max-width: #{$max-width})';
-    @if $min-width > 0 {
-      $query: '(min-width: #{$min-width + 1px}) and #{$query}';
-    }
-    @media $query {
-      @content;
+    @if $longitude-compability-mode == false {
+      $min-width: absolute-width($prev-column-count);
+      $max-width: absolute-width($column-count);
+      $query: '(max-width: #{$max-width})';
+      @if $min-width > 0 {
+        $query: '(min-width: #{$min-width + 1px}) and #{$query}';
+      }
+      @media $query {
+        @content;
+      }
     }
     $prev-column-count: $column-count
   }
   // Last step, use pixels
   $longitude-base-width: absolute-width(column-count());
-  @media (min-width: ($max-width + 1px)) {
+  @if $longitude-compability-mode  {
     @content;
+  } @else {
+    @media (min-width: ($max-width + 1px)) {
+      @content;
+    }
   }
 }
 
