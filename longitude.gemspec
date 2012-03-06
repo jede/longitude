@@ -7,9 +7,10 @@ Gem::Specification.new do |s|
   s.version     = Longitude::VERSION
   s.authors     = ["Johannes Edelstam"]
   s.email       = ["johannes@edelst.am"]
-  s.homepage    = "http://github.com/jede.longitude"
+  s.homepage    = "http://github.com/jede/longitude"
+  s.license     = "MIT"
   s.summary     = %q{A responsive, mobile first, unobtrusive SCSS grid!}
-  s.description = """Longitude lets you easily create responsive, mobile first layouts with minimal footprint in an unobtrusive way!
+  s.description = """Lets you easily using SCSS create responsive, mobile first layouts with minimal footprint in an unobtrusive way!
 
 Longitude is more a collection of calculations than just a normal CSS grid. It lets you define how elements will be styled based on your class hierarchy, not the framework's."""
 
