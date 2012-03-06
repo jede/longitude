@@ -7,9 +7,11 @@ Gem::Specification.new do |s|
   s.version     = Longitude::VERSION
   s.authors     = ["Johannes Edelstam"]
   s.email       = ["johannes@edelst.am"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "http://github.com/jede.longitude"
+  s.summary     = %q{A responsive, mobile first, unobtrusive SCSS grid!}
+  s.description = """Longitude lets you easily create responsive, mobile first layouts with minimal footprint in an unobtrusive way!
+
+Longitude is more a collection of calculations than just a normal CSS grid. It lets you define how elements will be styled based on your class hierarchy, not the framework's."""
 
   s.rubyforge_project = "longitude"
 
@@ -18,7 +20,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
+  s.add_development_dependency 'rake'
+  s.add_development_dependency "rspec"
+
   s.add_runtime_dependency "sass", ">= 3.2.beta"
 end
