@@ -14,12 +14,12 @@ Install
 
 To use it together with SASS just do:
 
-    gem install jede-longitude --source http://gems.github.com
+    gem install longitude
 
 Or if you are using [Bundler](http://gembundler.com/) just type add it
 to your Gemfile
 
-    gem 'longitude', git: 'git@github.com:jede/longitude.git'
+    gem 'longitude'
 
 Usage
 -----
