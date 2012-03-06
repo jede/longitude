@@ -29,13 +29,13 @@ relate to actual pixels at the different breakpoints, it uses base values
 in pixels. Breakpoints are then calculated by different column counts.
 Longitude defaults to 60px wide columns with 10px gutters on each side.
 
-   +------+-------------------------------+------+
-   |      |                               |      |
-   |      |                               |      |
-   | 10px |             60px              | 10px |
-   |      |                               |      |
-   |      |                               |      |
-   +------+-------------------------------+------+
+     +------+-------------------------------+------+
+     |      |                               |      |
+     |      |                               |      |
+     | 10px |             60px              | 10px |
+     |      |                               |      |
+     |      |                               |      |
+     +------+-------------------------------+------+
 
 This can be changed by updating the following config variables:
 
