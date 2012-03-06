@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe 'Compability mode' do
+describe 'Compatibility mode' do
   before :each do
     @css = render """
-      $longitude-compability-mode: true;
+      $longitude-compatibility-mode: true;
 
       @include longitude(2 4) {
         p { width: columns(2); }
