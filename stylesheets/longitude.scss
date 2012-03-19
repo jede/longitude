@@ -58,7 +58,7 @@ $longitude-base-width: 100%;
       @if $min-width > 0 {
         $query: '(min-width: #{$min-width + 1px}) and #{$query}';
       }
-      @media $query {
+      @media #{$query} {
         @content;
       }
     }

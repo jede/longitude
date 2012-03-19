@@ -24,5 +24,5 @@ Longitude is more a collection of calculations than just a normal CSS grid. It l
   s.add_development_dependency 'rake'
   s.add_development_dependency "rspec"
 
-  s.add_runtime_dependency "sass", ">= 3.2.beta"
+  s.add_runtime_dependency "sass", "3.2.0.alpha.94"
 end
