@@ -145,6 +145,11 @@ extra breakpoint for all width larger then the maximum provided with in
 real pixels. This makes debugging and adjusting much easier and ensures
 pixel perfectness when the largest breakpoint is used.
 
+### is-fluid()
+
+Return true or false depending on if the current breakpoint is the extra
+breakpoint mentioned above.
+
 Compatibility mode (dealing with Internet Explorer)
 ---------------------------------------------------
 
