@@ -50,10 +50,10 @@ $longitude-base-width: 100%;
   @return $longitude-base-width == 100%;
 }
 
-@mixin longitude($columns-list) {
+@mixin longitude($breakpoints) {
   $prev-column-count: 0;
   $max-width: 0;
-  @each $column-count in $columns-list {
+  @each $column-count in $breakpoints {
     $longitude-column-count: $column-count;
     @if $longitude-compatibility-mode == false {
       $min-width: absolute-width($prev-column-count);
