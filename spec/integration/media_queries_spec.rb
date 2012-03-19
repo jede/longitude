@@ -39,4 +39,22 @@ describe 'Media queries' do
       @css.should include('@media (min-width: 41px) and (max-width: 80px)')
     end
   end
+
+  describe 'fluidity check' do
+    before :each do
+      @css = render """
+      @include longitude(4) {
+        p { 
+          @if not is-fluid() {
+            color: blue;
+          }
+        }
+      }
+      """
+    end
+
+    it 'should only render "color: blue" for the higher bound media query' do
+      @css.should match(/@media \(min-width: 321px\).*color: blue;/m)
+    end
+  end
 end

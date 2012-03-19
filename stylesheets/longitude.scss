@@ -46,6 +46,10 @@ $longitude-base-width: 100%;
   margin-right: gutter();
 }
 
+@function is-fluid() {
+  @return $longitude-base-width == 100%;
+}
+
 @mixin longitude($columns-list) {
   $prev-column-count: 0;
   $max-width: 0;
