@@ -76,6 +76,7 @@ $longitude-base-width: 100%;
   }
   // Last step, use pixels
   $longitude-base-width: absolute-width(column-count());
+  $longitude-column-index: $longitude-column-index + 1;
   @if $longitude-compatibility-mode  {
     @content;
   } @else {
