@@ -52,7 +52,7 @@ $longitude-base-width: 100%;
 }
 
 @function steps($list){
-  @return nth($list, $longitude-column-index);
+  @return nth($list, min($longitude-column-index, length($list)));
 }
 
 @mixin longitude($breakpoints) {
