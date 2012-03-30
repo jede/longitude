@@ -3,6 +3,7 @@ $longitude-column-width: 60px !default;
 $longitude-compatibility-mode: false !default;
 
 $longitude-column-count: 0;
+$longitude-column-index: 0;
 $longitude-base-width: 100%;
 
 @function absolute-width($columns) {
@@ -50,10 +51,15 @@ $longitude-base-width: 100%;
   @return $longitude-base-width == 100%;
 }
 
+@function steps($list){
+  @return nth($list, $longitude-column-index);
+}
+
 @mixin longitude($breakpoints) {
   $prev-column-count: 0;
   $max-width: 0;
   @each $column-count in $breakpoints {
+    $longitude-column-index: $longitude-column-index + 1;
     $longitude-column-count: $column-count;
     @if $longitude-compatibility-mode == false {
       $min-width: absolute-width($prev-column-count);
