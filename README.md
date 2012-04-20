@@ -150,6 +150,17 @@ pixel perfectness when the largest breakpoint is used.
 Return true or false depending on if the current breakpoint is the extra
 breakpoint mentioned above.
 
+### steps(...)
+
+Steps through a list of values for each breakpoint. If there are fewer
+steps then breakpoints, the last step will be used for padding. Example that will change color for every step and all larger breakpoints will be green: 
+
+```scss
+section {
+  color: steps(red blue green);
+}
+```
+
 Compatibility mode (dealing with Internet Explorer)
 ---------------------------------------------------
 
