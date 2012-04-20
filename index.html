@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href='http://fonts.googleapis.com/css?family=Arvo|Oswald' rel='stylesheet' type='text/css'>
+<!--[if (gte IE 9)|!(IE)]><!-->
+  <link rel="stylesheet" href="main.css" type="text/css"/>
+<!--<![endif]-->
+
+<!--[if (lte IE 8)]>
+  <link rel="stylesheet" href="main-ie.css" type="text/css"/>
+<![endif]-->
+
+  <title>Longitude SCSS Grid</title>
+</head>
+<body>
+  <header>
+  <a href="https://github.com/jede/longitude">
+    <img class="fork-me" src="fork_me.png" title="Fork Me" alt="Fork Me on GitHub"/>
+  </a>
+    <hgroup>
+      <h1>Longitude</h1>
+      <h2>Responsible Responsive</h2>
+    </hgroup>
+    <div class="longitudes left">
+      <span>15</span>
+      <span>30</span>
+      <span>45</span>
+      <span>60</span>
+      <span>75</span>
+      <span>90</span>
+      <span>105</span>
+      <span>120</span>
+      <span>135</span>
+      <span>150</span>
+      <span>165</span>
+      <span>180</span>
+    </div>
+    <div class="longitudes right">
+      <span>15</span>
+      <span>30</span>
+      <span>45</span>
+      <span>60</span>
+      <span>75</span>
+      <span>90</span>
+      <span>105</span>
+      <span>120</span>
+      <span>135</span>
+      <span>150</span>
+      <span>165</span>
+      <span>180</span>
+    </div>
+  </header>
+  <div class="frame">
+  </div>
+  <article>
+    <h1>What is it?</h1>
+    <p>
+    Longitude is a set of calculations for creating mobile first, responsive 
+    and semantic web sites. It is written purly in SCSS and is meant to be as 
+    unobtrusive as possible, meaning that you shouldn't have to adapt your 
+    semantics to the CSS.
+    </p>
+    <p>
+    Since Longitude only consits of calculations, it doesnt add any overhead 
+    to your CSS. No extra stylesheets to include in your final CSS, nothing.
+    </p>
+    <figure>
+      <img src="example.png" title="Example" alt="Example illustration"/>
+    </figure>
+  </article>
+  <article>
+    <h1>What is it <em>not</em>?</h1>
+    <p>
+    Longitude is not a set of classes, it is a set of calculations. This 
+    means that Longitude itself is not a grid. You have to create the grid!
+    </p>
+    <p>
+    Fear not! Longitude makes it a breeze. It is acctually really handy to be 
+    able to taylor the grid exclusivly for the web site you are creating!
+    </p>
+    <p>
+    Longitude is not a collection of UI styles, it just helpes you with the 
+    responsive layout, thats all. So if you want to combine it with something
+    else, go ahead! Or if you want to roll your own, please feel free. Longitude
+    will stay out of your way.
+    </p>
+  </article>
+  <article>
+    <h1>Example</h1>
+    <p>
+    Here are some examples of how you can make your own grid. Longitude uses columns as units. Look at the following SCSS:
+    </p>
+<div class="highlight"><pre><span class="c">/* Breakpoints in columns */</span>
+<span class="k">@include</span> <span class="nt">longitude</span><span class="o">(</span><span class="err">$</span><span class="nt">breakpoints</span><span class="o">:</span> <span class="nt">4</span> <span class="nt">8</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">section</span> <span class="p">{</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="c">/* 2 per row when narrow layout, and 4 when wide */</span>
+    <span class="k">width</span><span class="o">:</span> <span class="n">columns</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+    <span class="c">/* this gives us some space between the sections */</span>
+    <span class="k">@include</span> <span class="n">gutters</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+</div>
+    <p>
+     It translates to CSS like this:
+    </p>
+
+<div class="highlight"><pre><span class="c">/* Breakpoints in columns */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">320px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">section</span> <span class="p">{</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="c">/* 2 per row when narrow layout, and 4 when wide */</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">43</span><span class="o">.</span><span class="m">75</span><span class="o">%</span><span class="p">;</span>
+    <span class="c">/* this gives us some space between the sections */</span>
+    <span class="k">margin-left</span><span class="o">:</span> <span class="m">3</span><span class="o">.</span><span class="m">125</span><span class="o">%</span><span class="p">;</span>
+    <span class="k">margin-right</span><span class="o">:</span> <span class="m">3</span><span class="o">.</span><span class="m">125</span><span class="o">%</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">321px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">section</span> <span class="p">{</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="c">/* 2 per row when narrow layout, and 4 when wide */</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">21</span><span class="o">.</span><span class="m">875</span><span class="o">%</span><span class="p">;</span>
+    <span class="c">/* this gives us some space between the sections */</span>
+    <span class="k">margin-left</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">563</span><span class="o">%</span><span class="p">;</span>
+    <span class="k">margin-right</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">563</span><span class="o">%</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">641px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">section</span> <span class="p">{</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="c">/* 2 per row when narrow layout, and 4 when wide */</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">140px</span><span class="p">;</span>
+    <span class="c">/* this gives us some space between the sections */</span>
+    <span class="k">margin-left</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="k">margin-right</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+</pre>
+</div>
+  </article>
+  <article>
+    <h1>Documentation</h1>
+    <p>The project isn't very big. The Readme hopefully covers the most important functionallity. Check it out at: <a href="https://github.com/jede/longitude_demo">GitHub</a>.</p>
+  </article>
+  <article>
+    <h1>Demonstration</h1>
+    <p>Coming soon! Have a look at the <a href="https://github.com/jede/longitude_demo">source</a> for this page in the meantime.</p>
+  </article>
+  <article>
+    <h1>Browser support</h1>
+    <p>Longitude supports most modern browsers.</p>
+    <figure>
+      <img src="browsers.png" title="Example" alt="Example illustration"/>
+    </figure>
+  </article>
+  <footer>
+      Made by Johannes Edelstam. MIT Licensed.
+  </footer>
+</body>

@@ -1,0 +1,15 @@
+@media (max-width: 240px) {
+  section.content {
+    margin: 0 auto; } }
+@media (min-width: 241px) and (max-width: 480px) {
+  section.content {
+    margin: 0 auto; } }
+@media (min-width: 481px) and (max-width: 720px) {
+  section.content {
+    margin: 0 auto; } }
+@media (min-width: 721px) and (max-width: 960px) {
+  section.content {
+    margin: 0 auto; } }
+@media (min-width: 961px) {
+  section.content {
+    margin: 0 auto; } }
