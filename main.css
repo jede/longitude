@@ -327,7 +327,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Literal.Number.Integer.Long */
 html, body {
   font-family: "Arvo", serif;
-  font-size: 19px;
   line-height: 1.5em;
   background: -webkit-gradient(linear, 0% 50%, 1 50%, color-stop(100%, rgba(74, 67, 28, 0.4)), color-stop(100%, transparent)), -webkit-gradient(linear, 0% 50%, 2 50%, color-stop(100%, rgba(255, 255, 255, 0.7)), color-stop(100%, transparent)), url(map.jpg);
   background: -webkit-linear-gradient(left, rgba(74, 67, 28, 0.4) 1px, transparent 1px), -webkit-linear-gradient(left, rgba(255, 255, 255, 0.7) 2px, transparent 2px), url(map.jpg);
@@ -343,7 +342,6 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
-  font-size: 44px;
   line-height: 1.2em;
   margin-top: 0.6em;
   margin-bottom: 0.6em; }
@@ -377,12 +375,12 @@ header {
     background: url(logo.png) center bottom no-repeat;
     background-size: 95%;
     max-height: 153px;
-    line-height: 153px;
     max-width: 513px; }
   header .fork-me {
     position: absolute;
     top: 0px;
-    left: 0px; }
+    left: 0px;
+    height: auto; }
   header .longitudes {
     border-top: 1px solid #1d2a34;
     float: left;
@@ -453,7 +451,8 @@ body > article {
 
 .highlight {
   border: 1px solid rgba(74, 67, 28, 0.4);
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  overflow-x: auto; }
 
 pre {
   margin: 8px;
@@ -461,6 +460,12 @@ pre {
   font-family: 'Bitstream Vera Sans Mono','Courier',monospace; }
 
 @media (max-width: 320px) {
+  html, body {
+    font-size: 16px; }
+
+  .fork-me {
+    width: 70px; }
+
   hgroup {
     max-width: 550px;
     margin: 3.125% auto;
@@ -479,6 +484,9 @@ pre {
     body > article > * {
       margin-left: 3.125%;
       margin-right: 3.125%; }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 26px; }
 
   div#demo1 {
     overflow: hidden;
@@ -500,6 +508,12 @@ pre {
       background-color: #273845;
       height: 40px; } }
 @media (min-width: 321px) and (max-width: 480px) {
+  html, body {
+    font-size: 17px; }
+
+  .fork-me {
+    width: 141px; }
+
   hgroup {
     max-width: 550px;
     margin: 2.083% auto;
@@ -518,6 +532,9 @@ pre {
     body > article > * {
       margin-left: 2.083%;
       margin-right: 2.083%; }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 34px; }
 
   div#demo1 {
     overflow: hidden;
@@ -539,6 +556,12 @@ pre {
       background-color: #273845;
       height: 40px; } }
 @media (min-width: 481px) and (max-width: 720px) {
+  html, body {
+    font-size: 19px; }
+
+  .fork-me {
+    width: 141px; }
+
   hgroup {
     max-width: 550px;
     margin: 1.389% auto;
@@ -557,6 +580,9 @@ pre {
     body > article > * {
       margin-left: 1.389%;
       margin-right: 1.389%; }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 44px; }
 
   div#demo1 {
     overflow: hidden;
@@ -578,6 +604,12 @@ pre {
       background-color: #273845;
       height: 40px; } }
 @media (min-width: 721px) {
+  html, body {
+    font-size: 19px; }
+
+  .fork-me {
+    width: 141px; }
+
   hgroup {
     max-width: 550px;
     margin: 10px auto;
@@ -596,6 +628,9 @@ pre {
     body > article > * {
       margin-left: 10px;
       margin-right: 10px; }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 44px; }
 
   div#demo1 {
     overflow: hidden;
